@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2020-12-10T20:05:29 PST" name="Default suite" finished-at="2020-12-10T20:06:34 PST" duration-ms="65500">
+    <groups>
+    </groups>
+    <test started-at="2020-12-10T20:05:29 PST" name="Default test" finished-at="2020-12-10T20:06:34 PST" duration-ms="65500">
+      <class name="testcasesPkg.LoginPageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcasesPkg.LoginPageTest@45b9a632]" started-at="2020-12-10T20:05:29 PST" name="setup" finished-at="2020-12-10T20:05:50 PST" duration-ms="21199" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="loginTest()[pri:0, instance:testcasesPkg.LoginPageTest@45b9a632]" started-at="2020-12-10T20:05:50 PST" name="loginTest" finished-at="2020-12-10T20:06:33 PST" duration-ms="43370" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:testcasesPkg.LoginPageTest@45b9a632]" started-at="2020-12-10T20:06:33 PST" name="teardown" finished-at="2020-12-10T20:06:34 PST" duration-ms="870" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- testcasesPkg.LoginPageTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
