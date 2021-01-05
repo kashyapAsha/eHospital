@@ -42,10 +42,10 @@ public class PatientRegistrationPageTest extends BaseClass {
 	}
 	
 
-	@Test(dataProvider="registration", dataProviderClass=DataProviderClass.class)
+	@Test(dataProvider="registration", dataProviderClass=DataProviderClass.class, priority=1)
 	public void verifyRegistrationOfPatientTest(String fname, String mname, String lname, String age, String mail, String loyaltyCardNo, String identityNo, String addrss, String pin, String phone1, String phone2, String postalAdress, String relative) {
 		try {
-			patientRegistration.registrationOfPatient(fname, mname, lname, age, mail, loyaltyCardNo, identityNo, addrss, pin, phone1, phone2, postalAdress, relative);;
+			patientRegistration.registrationOfPatient(fname, mname, lname, age, mail, loyaltyCardNo, identityNo, addrss, pin, phone1, phone2, postalAdress, relative);
 		} catch (InterruptedException e) {
 			
 			e.printStackTrace();
@@ -53,30 +53,35 @@ public class PatientRegistrationPageTest extends BaseClass {
 			
 	}
 
-	@Test(dependsOnMethods= {"verifyRegistrationOfPatientTest"})
+	@Test(dependsOnMethods= {"verifyRegistrationOfPatientTest"}, priority=2)
 	public void getPatientUHIDTest() throws IOException {
 		String uhid= patientRegistration.getPatientUHID();
 		System.out.println("uhid is="+uhid);
 		xl.setCellData(path, "PatientRegistration", 1, 13, uhid);
 	}
 	
-	@Test
-	public void verifyPatientSearchTest() throws IOException {
-		String uhid =xl.getCellData(path, "PatientRegistration", 1, 12);
+	
+	/*public void verifyPatientSearchTest() throws IOException {
+		String uhid =xl.getCellData(path, "PatientRegistration", 1, 13);
 		try {
 			patientRegistration.verifyPatientSearch(uhid);
 		} catch (InterruptedException e) {
 			
 			e.printStackTrace();
 		}
+	}*/
+	@Test(dependsOnMethods= {"verifyRegistrationOfPatientTest"},priority=3)
+	public void verifyClearTest() throws InterruptedException {
+		patientRegistration.verifyClear();
 	}
-	@Test
+	
+	@Test(priority=4)
 	public void verifyFetchPatientByHandIconTest() throws IOException {
-		String uhid =xl.getCellData(path, "PatientRegistration", 1, 12);
+		String uhid =xl.getCellData(path, "PatientRegistration", 1, 13);
 		try {
 			String getName=patientRegistration.getPatientByHandIcon(uhid);
 			System.out.println(getName);
-			Assert.assertEquals(getName, "Hit", "patient not fetched");
+			Assert.assertEquals(getName, "Ash", "patient not fetched");
 			
 		} catch (InterruptedException e) {
 			
@@ -84,7 +89,7 @@ public class PatientRegistrationPageTest extends BaseClass {
 		}
 	}
 	
-	@Test(dependsOnMethods= {"verifyFetchPatientByHandIconTest"})
+	@Test(dependsOnMethods= {"verifyFetchPatientByHandIconTest"}, priority=5)
 	public void verifyPrintPatientInfoTest() {
 		Boolean flag;
 		try {
@@ -96,7 +101,7 @@ public class PatientRegistrationPageTest extends BaseClass {
 		}
 	}
 	
-	@Test(dependsOnMethods= {"verifyFetchPatientByHandIconTest"})
+	@Test(priority=6)
 	public void verifyPrintRegistrationCardTest() {
 		Boolean flag;
 		try {
@@ -108,7 +113,7 @@ public class PatientRegistrationPageTest extends BaseClass {
 		}
 	}
 	
-	@Test(dependsOnMethods= {"verifyFetchPatientByHandIconTest"})
+	@Test(priority=7)
 	public void verifyCompanyDocumentTest() {
 		Boolean flag;
 		try {
@@ -120,7 +125,7 @@ public class PatientRegistrationPageTest extends BaseClass {
 		}
 	}
 	
-	@Test(dependsOnMethods= {"verifyFetchPatientByHandIconTest"})
+	@Test(priority=8)
 	public void verifyPrintLoyaltyCardTest() {
 		Boolean flag;
 		try {
@@ -132,7 +137,7 @@ public class PatientRegistrationPageTest extends BaseClass {
 		}
 	}
 	
-	 @Test(dependsOnMethods= {"verifyFetchPatientByHandIconTest"})
+	 @Test(priority=9)
 	public void verifyOpVisitTest() {
 		try {
 			patientRegistration.verifyOpVisit();

@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
@@ -23,161 +24,220 @@ public class PatientRegistrationClass extends BaseClass {
      
 	//page factory for patient reg page
 	@FindBy(xpath="//small[contains(text(),'Patient Registration')]")
+	@CacheLookup
 	WebElement patRegLink;
 	//name
 	@FindBy(xpath="//input[@id = 'MainContent__PatientRegistration1_txtPatientName']")
+	@CacheLookup
 	WebElement name; 
 	//middle name
 	@FindBy(xpath="//input[@id = 'MainContent__PatientRegistration1_txtMiddleName']")
+	@CacheLookup
 	WebElement middleName;
 	//last name
 	@FindBy(xpath="//input[@id = 'MainContent__PatientRegistration1_txtLastName']")
+	@CacheLookup
 	WebElement lastName;
 	//dob
 	@FindBy(xpath="//input[@id = 'MainContent__PatientRegistration1_txtAge']")
+	@CacheLookup
 	WebElement dob;
 	
 	@FindBy(id="MainContent__PatientRegistration1_txtMonth")
+	@CacheLookup
 	WebElement dobm;
 	//gender
 	@FindBy(xpath="//select[@id = 'MainContent__PatientRegistration1_cmbGender']")
+	@CacheLookup
 	WebElement genderList;
 	//marital status
 	@FindBy(xpath="//select[@id = 'MainContent__PatientRegistration1_cmbMaritalStatus']")
+	@CacheLookup
 	WebElement maritalStatusList;
 	//ocupation
 	@FindBy(xpath="//select[@id = 'MainContent__PatientRegistration1_cmbOccupation']")
+	@CacheLookup
 	WebElement occupationList;
 	//language
 	@FindBy(xpath="//select[@id = 'MainContent__PatientRegistration1_ddlPreferredLanguage']")
+	@CacheLookup
 	WebElement languageList;
 	//religion
 	@FindBy(xpath="//select[@id = 'MainContent__PatientRegistration1_ddlReligion']")
+	@CacheLookup
 	WebElement religionList;
 	//nationality
 	@FindBy(xpath="//input[@class = 'rcbInput radPreventDecorate']")
+	@CacheLookup
 	WebElement nationalityBox;
 	@FindBys(@FindBy(xpath=".//*[@class = 'rcbList']//li"))
+	@CacheLookup
 	List<WebElement> nationalityList;
 	//Email
 	@FindBy(xpath="//input[@id ='MainContent__PatientRegistration1_txtEmail']")
+	@CacheLookup
 	WebElement email;
 	//loyalty card
 	@FindBy(xpath="//select[@id = 'MainContent__PatientRegistration1_ddlLoyalty']")
+	@CacheLookup
 	WebElement loyaltyCardList;
 	//loylty card no
 	@FindBy(xpath="//input[@id = 'MainContent__PatientRegistration1_txtLoyaltyCardNo']")
+	@CacheLookup
 	WebElement cardNo;
 	//identity
 	@FindBy(xpath="//select[@id = 'MainContent__PatientRegistration1_ddlIdentity']")
+	@CacheLookup
 	WebElement identityList;
 	//identity no.
 	@FindBy(xpath="//input[@id = 'MainContent__PatientRegistration1_txtIdentityNo']")
+	@CacheLookup
 	WebElement identityCardNo;
 	//address
 	@FindBy(xpath="//input[@id = 'MainContent__PatientRegistration1_txtAddress1']")
+	@CacheLookup
 	WebElement address;
 	//province
 	@FindBy(xpath="//select[@id = 'MainContent__PatientRegistration1_ddlCountry']")
+	@CacheLookup
 	WebElement provinceList;
 	//District
 	@FindBy(id="MainContent__PatientRegistration1_ddlState")
+	@CacheLookup
 	WebElement districtList;
 	//commune box
 	@FindBy(id="MainContent__PatientRegistration1_txtcityname")
+	@CacheLookup
 	WebElement communeBox;
 	//commune list
 	@FindBys(@FindBy(xpath=".//*[@id = 'ui-id-1']//li"))
+	@CacheLookup
 	List<WebElement> communeList;
 	//pin
 	@FindBy(xpath="//input[@id = 'MainContent__PatientRegistration1_txtPinNo']")
+	@CacheLookup
 	WebElement pincode;
 	//ph no
 	@FindBy(xpath="//input[@id = 'MainContent__PatientRegistration1_txtMobile']")
+	@CacheLookup
 	WebElement telephone;
 	//ph no2
 	@FindBy(xpath="//input[@id = 'MainContent__PatientRegistration1_txtOtherMobile']")
+	@CacheLookup
 	WebElement telephone2;
 	//postal addrss
 	@FindBy(xpath="//input[@id = 'MainContent__PatientRegistration1_chkHouseAddress']")
+	@CacheLookup
 	WebElement checkBoxPostal;
 	//postal addrss
 	@FindBy(xpath="//input[@id = 'MainContent__PatientRegistration1_txtHAaddress']")
+	@CacheLookup
 	WebElement postalAddress;
 	//postal province
 	@FindBy(xpath="//select[@id = 'MainContent__PatientRegistration1_ddlHACountry']")
+	@CacheLookup
 	WebElement postalProvinceList;
 	//postal district
 	@FindBy(xpath="//select[@id = 'MainContent__PatientRegistration1_ddlHAState']")
+	@CacheLookup
 	WebElement postalDistrictList;
 	//postal commune
 	@FindBy(id="MainContent__PatientRegistration1_txtHACity")
+	@CacheLookup
 	WebElement postalCommuneBox;
 	@FindBys(@FindBy(xpath="//ul[@class = 'ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all']//li"))
+	@CacheLookup
 	List<WebElement> postalCommuneList;
 	//nearest relative
 	@FindBy(xpath="//input[@id = 'MainContent__PatientRegistration1_chkAddress']")
+	@CacheLookup
 	WebElement nearestRelative;
 	//relative name
 	@FindBy(xpath="//input[@id= 'MainContent__PatientRegistration1_txtContactPersonName']")
+	@CacheLookup
 	WebElement relativeName;
 	//relation list
 	@FindBy(xpath="//select[@id = 'MainContent__PatientRegistration1_ddlRelationEmg']")
+	@CacheLookup
 	WebElement relationList;
 	//save button
 	@FindBy(id="MainContent__PatientRegistration1_Button5")
+	@CacheLookup
 	WebElement saveButton;
 	//contiue button
 	@FindBy(css="#MainContent__PatientRegistration1_imgbtncontinue")
+	@CacheLookup
 	WebElement continueButton;
 	@FindBy(css="#MainContent__PatientRegistration1_lblMsgN")
+	//@CacheLookup
 	WebElement alertMsg;
 	@FindBy(css="#CloseReg1")
+	//@CacheLookup
 	WebElement ok;
 	@FindBy(id="MainContent__PatientRegistration1_txtPatRegistrationId")
+	//@CacheLookup
 	WebElement uhid;
 	//three dots
 	@FindBy(xpath="//input[@id='MainContent__PatientRegistration1_ImageButton6']")
+	@CacheLookup
 	WebElement actionButton;
 	//print patient info
 	@FindBy(xpath="//body[1]/form[1]/div[6]/div[2]/div[1]/div[1]/div[1]/span[1]/div[2]/ul[1]/li[1]/ul[1]/table[1]/tbody[1]/tr[3]/td[1]/li[1]/a[1]")
+	@CacheLookup
 	WebElement printPatientInfo;
 	@FindBy(xpath="//span[@id='MainContent__PatientRegistration1_Label17']")
+	@CacheLookup
 	WebElement print1;
 	//search button
 	@FindBy(xpath="//input[@id='MainContent__PatientRegistration1_ImageButton5']")
+	@CacheLookup
 	WebElement searchButton;
 	//search UHID
 	@FindBy(xpath="//input[@id='MainContent__PatientRegistration1__testSearch_txtserRegNo']")
+	@CacheLookup
 	WebElement searchUhid;
 	//hand icon
 	@FindBy(xpath="//input[@id='MainContent__PatientRegistration1__testSearch_ImageButton1']")
+	@CacheLookup
 	WebElement searchHandIcon;
 	//fetchedUhid
 	@FindBy(xpath="//span[@id='MainContent__PatientRegistration1__testSearch_dgPatSearch_lblRegistrationNo_0']")
+	@CacheLookup
 	WebElement fetchUhid;
 	//click on fetch hand icon
 	@FindBy(xpath="//input[@id='MainContent__PatientRegistration1__testSearch_dgPatSearch_imgbutton_0']")
+	@CacheLookup
 	WebElement fetchHandIcon;
 	//uhid date
 	@FindBy(xpath="//input[@id='MainContent__PatientRegistration1_txtRegDate']")
+	@CacheLookup
 	WebElement uhidDate;
 	//uhid text box
 	@FindBy(xpath="//input[@id='MainContent__PatientRegistration1_txtPatRegistrationId']")
+	@CacheLookup
 	WebElement uhidTextBox;
 	//uhid hand icon
 	@FindBy(xpath="//input[@id='MainContent__PatientRegistration1_ImageButton3']")
+	@CacheLookup
 	WebElement uhidHandIcon;
+	//clear
+	@FindBy(xpath="//body[1]/form[1]/div[6]/div[2]/div[1]/div[1]/div[1]/span[1]/div[2]/ul[1]/li[1]/ul[1]/table[1]/tbody[1]/tr[1]/td[1]/li[1]/a[1]")
+	@CacheLookup
+	WebElement clear;
 	//registration card
 	@FindBy(xpath="//body[1]/form[1]/div[6]/div[2]/div[1]/div[1]/div[1]/span[1]/div[2]/ul[1]/li[1]/ul[1]/table[1]/tbody[1]/tr[4]/td[1]/li[1]/a[1]")
+	@CacheLookup
 	WebElement printRegistrationCard;
 	//company document
 	@FindBy(xpath="//body[1]/form[1]/div[6]/div[2]/div[1]/div[1]/div[1]/span[1]/div[2]/ul[1]/li[1]/ul[1]/table[1]/tbody[1]/tr[5]/td[1]/li[1]/a[1]")
+	@CacheLookup
 	WebElement companyDoc;
 	@FindBy(xpath="//body[1]/form[1]/div[6]/div[2]/div[1]/div[1]/div[1]/span[1]/div[2]/ul[1]/li[1]/ul[1]/table[1]/tbody[1]/tr[6]/td[1]/li[1]/a[1]")
+	@CacheLookup
 	WebElement printLoyaltyCard;
 	//op visit
 	@FindBy(xpath="//body[1]/form[1]/div[6]/div[2]/div[1]/div[1]/div[1]/span[1]/div[2]/ul[1]/li[1]/ul[1]/table[1]/tbody[1]/tr[2]/td[1]/li[1]/a[1]")
+	@CacheLookup
 	WebElement opVisit;
 	
 	
@@ -208,7 +268,7 @@ public class PatientRegistrationClass extends BaseClass {
 		//select gender
 		Select genderfemale = new Select(genderList);
 		genderfemale.selectByVisibleText("Female");
-		Thread.sleep(11000);
+		Thread.sleep(12000);
 		try {
 		//marital status
 		Select MaritalStatus = new Select(maritalStatusList);
@@ -379,9 +439,18 @@ public class PatientRegistrationClass extends BaseClass {
 		
 	}
 	
+	public void verifyClear() throws InterruptedException {
+		actionButton.click();
+		Thread.sleep(5000);
+		action.moveToElement(clear).build().perform();
+		Thread.sleep(3000);
+		clear.click();
+		Thread.sleep(7000);
+	}
+	
 	public String getPatientByHandIcon(String uhid) throws InterruptedException {
-		wt.until(ExpectedConditions.visibilityOf(patRegLink)).click();
-		Thread.sleep(6000);
+	//	wt.until(ExpectedConditions.visibilityOf(patRegLink)).click();
+		Thread.sleep(3000);
 		uhidTextBox.sendKeys(uhid);
 		Thread.sleep(4000);
 		uhidHandIcon.click();
@@ -390,6 +459,8 @@ public class PatientRegistrationClass extends BaseClass {
 		return FirstName.getAttribute("value");
 		
 	}
+	
+	
 	
 	public Boolean verifyPrintPatientInfo() throws InterruptedException {
 		actionButton.click();

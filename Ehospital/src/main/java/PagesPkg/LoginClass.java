@@ -3,6 +3,7 @@ package PagesPkg;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 //import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -16,18 +17,23 @@ public class LoginClass extends BaseClass {
 	public Boolean admin= null;
 	
 	@FindBy(id= "username")
+	@CacheLookup
 	WebElement username;
 	
 	@FindBy(id= "password")
+	//@CacheLookup
 	WebElement password;
 	
 	@FindBy(id= "ddlHospital")
+	@CacheLookup
 	WebElement hospital;
 	
 	@FindBy(xpath= "//body/form[@id='login']/div[@id='up1']/section[1]/div[1]/div[1]/div[1]/div[2]/img[1]")
+	@CacheLookup
 	WebElement logo;
 	
 	@FindBy(id= "btnValidateLogin")
+	@CacheLookup
 	WebElement loginbutton;
 	
 	

@@ -3,13 +3,21 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testcasesPkg.LoginPageTest">
+      <class name="testcasesPkg.PatientRegistrationPageTest">
         <methods>
-          <include name="loginTest"/>
+          <include name="verifyPrintPatientInfoTest"/>
           <include name="teardown"/>
+          <include name="verifyOpVisitTest"/>
+          <include name="verifyPrintLoyaltyCardTest"/>
           <include name="setup"/>
+          <include name="verifyCompanyDocumentTest"/>
+          <include name="verifyFetchPatientByHandIconTest"/>
+          <include name="getPatientUHIDTest"/>
+          <include name="verifyRegistrationOfPatientTest" invocation-numbers="0"/>
+          <include name="verifyClearTest"/>
+          <include name="verifyPrintRegistrationCardTest"/>
         </methods>
-      </class> <!-- testcasesPkg.LoginPageTest -->
+      </class> <!-- testcasesPkg.PatientRegistrationPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

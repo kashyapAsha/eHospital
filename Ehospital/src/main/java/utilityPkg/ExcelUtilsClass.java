@@ -69,7 +69,7 @@ public class ExcelUtilsClass {
 		wb= new XSSFWorkbook(fi);
 		sheet=wb.getSheet(sheetName);
 		row=sheet.getRow(rownum);
-		cell= row.getCell(colnum);
+		cell= row.createCell(colnum);
 		cell.setCellValue(data);
 		fo= new FileOutputStream(path);
 		wb.write(fo);
